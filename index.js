@@ -1,14 +1,12 @@
 const express = require("express");
 const app = express();
+const cors = require("cors");
+const User = require("./models/user");
+
 app.use(express.json());
-const db = require("./models");
+app.use(cors());
 
-//Routes
-const postRoute = require("./routes/Posts");
-app.use("/post", postRoute);
-
-db.sequelize.sync().then(() => {
-  app.listen(3000, () => {
-    console.log("server runing on 3000 port");
-  });
+User.sync({ force: true });
+app.listen(3000, () => {
+  console.log("server runing on 3000 port");
 });
