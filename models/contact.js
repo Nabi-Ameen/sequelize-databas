@@ -1,13 +1,13 @@
 module.exports = (sequelize, DataTypes) => {
-  const User = sequelize.define(
-    "User",
+  const Contact = sequelize.define(
+    "contacts",
     {
       // Model attributes are defined here
-      firstName: {
+      permanent_Address: {
         type: DataTypes.STRING,
         allowNull: false,
       },
-      lastName: {
+      current_address: {
         type: DataTypes.STRING,
         // allowNull defaults to true
       },
@@ -16,5 +16,5 @@ module.exports = (sequelize, DataTypes) => {
       timestamps: false,
     }
   );
-  return User;
+  return Contact;
 };
