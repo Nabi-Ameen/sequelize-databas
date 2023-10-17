@@ -13,6 +13,6 @@ app.post("/user", userCtrl.postUser);
 app.delete("/user:id", userCtrl.deleteUser);
 app.patch("/user:id", userCtrl.updateUser);
 
-app.listen(3000, () => {
-  console.log("server runing on 3000 port");
+app.listen(5000, () => {
+  console.log("server runing on 5000 port");
 });
