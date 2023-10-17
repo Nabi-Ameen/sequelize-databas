@@ -13,8 +13,6 @@ try {
   console.error("Unable to connect to the database:", error);
 }
 
-
-
 sequelize.sync().then((err)=>{
   console.log("table created")
 },function(err){console.log('An error occured while creating table'+err)});

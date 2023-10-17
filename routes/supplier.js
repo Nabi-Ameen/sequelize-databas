@@ -1,7 +1,7 @@
 
 const express = require('express')
 const router = express.Router();
-const suppCtrl = require("../controllers")
+const {suppCtrl} = require("../controllers")
 
 
 

@@ -1,7 +1,7 @@
 const sequelize = require("../db/db_config");
 const Sequelize = require("sequelize");
 const { DataTypes } = Sequelize;
-const supplier = sequelize.define(
+const Supplier = sequelize.define(
   "supplier",
   {
     supplier_Category: {
@@ -20,7 +20,7 @@ const supplier = sequelize.define(
       type: DataTypes.INTEGER,
     },
     commision: {
-      type: DataTypes.STRING,
+      type: DataTypes.INTEGER,
     },
     email: {
       type: DataTypes.STRING,
@@ -34,4 +34,4 @@ const supplier = sequelize.define(
   }
 );
 
-module.exports = supplier;
+module.exports = Supplier;
