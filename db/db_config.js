@@ -13,11 +13,9 @@ try {
   console.error("Unable to connect to the database:", error);
 }
 
-const db = {};
-db.Sequelize = Sequelize;
-db.sequelize = sequelize;
-db.contact = require("./contact")(sequelize, DataTypes);
-db.user = require("./user")(sequelize, DataTypes);
 
-db.sequelize.sync({ force: false });
-module.exports = db;
+
+sequelize.sync().then((err)=>{
+  console.log("table created")
+},function(err){console.log('An error occured while creating table'+err)});
+module.exports = sequelize;
