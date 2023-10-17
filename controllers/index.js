@@ -1,3 +1,3 @@
-const postController = require("./suppplier")
+const suppCtrl = require("./suppplier")
 
-module.exports = {postController}
+module.exports = {suppCtrl}
