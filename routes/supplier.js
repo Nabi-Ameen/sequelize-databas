@@ -18,4 +18,8 @@ router.patch("/update/:id", async (req, res) => {
   return suppCtrl.updataSingleSupplier(req, res);
 });
 
+router.delete("/delete/:id", async (req, res) => {
+  return suppCtrl.deleteSingleSupplier(req, res);
+});
+
 module.exports = router;

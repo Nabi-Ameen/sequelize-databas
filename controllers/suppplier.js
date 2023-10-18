@@ -86,9 +86,27 @@ const updataSingleSupplier = async (req, res) => {
   }
 };
 
+const deleteSingleSupplier = async (req, res) => {
+  try {
+    const id = req.params.id;
+    const supplier = await Supplier.destroy({ where: { id: id } });
+    if (supplier) {
+      res.status(200).json({ success: true, message: "record deleted" });
+    } else {
+      res.status(404).json({ success: false, message: "Record not found" });
+    }
+  } catch (error) {
+    console.log(error);
+    res
+      .status(500)
+      .send({ success: false, message: "internal server error" + error });
+  }
+};
+
 module.exports = {
   postSupplier,
   getSupplier,
   getSingleSupplier,
   updataSingleSupplier,
+  deleteSingleSupplier,
 };
