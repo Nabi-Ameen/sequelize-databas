@@ -1,7 +1,7 @@
-const express = require('express')
+const express = require("express");
 const router = express.Router();
-const supplier = require("./supplier")
+const supplier = require("./supplier");
 
-router.use("/supplier", supplier)
+router.use("/supplier", supplier);
 
-module.exports = router
+module.exports = router;
