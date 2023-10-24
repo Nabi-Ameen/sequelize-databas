@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
-const { suppRules } = require("../controllers");
+const createSupplierRules = require("../controllers/supplierRuls");
 
 router.post("/post", async (req, res) => {
-  return suppRules.createSupplierRuls(req, res);
+  return createSupplierRules(req, res);
 });
