@@ -1,3 +1,4 @@
-const suppCtrl = require("./suppplier")
+const suppCtrl = require("./suppplier");
+const suppRuls = require("./supplierRuls");
 
-module.exports = {suppCtrl}
+module.exports = { suppCtrl, suppRuls };

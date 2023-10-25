@@ -5,6 +5,11 @@ const { DataTypes } = Sequelize;
 const SupplierModel = sequelize.define(
   "supplierRules",
   {
+    id:{
+      type:DataTypes.INTEGER,
+      autoIncrement:true,
+      primaryKey:true
+    },
     supplierType: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -22,8 +27,8 @@ const SupplierModel = sequelize.define(
       allowNull: false,
     },
     status: {
-      type: DataTypes.BOOLEAN,
-      allowNull: false,
+      type: DataTypes.BOOLEAN ,
+      allowNull: true,
     },
   },
   {
