@@ -7,18 +7,23 @@ const SupplierModel = sequelize.define(
   {
     supplierType: {
       type: DataTypes.STRING,
+      allowNull: false,
     },
     image: {
       type: DataTypes.STRING,
+      allowNull: false,
     },
     header: {
       type: DataTypes.STRING,
+      allowNull: false,
     },
     description: {
-      type: DataTypes.STRING,
+      type: DataTypes.TEXT,
+      allowNull: false,
     },
     status: {
       type: DataTypes.BOOLEAN,
+      allowNull: false,
     },
   },
   {

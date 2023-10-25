@@ -1,10 +1,10 @@
-const { SupplierModel } = require("../models");
+const SupplierModel = require("../models/supplierRulsModel");
 
 const createSupplierRules = async (req, res) => {
   try {
-    const body = req.body;
-    const createSupplierRule = await SupplierModel.create(body);
-    res.status(201).send({ success: true, data: createSupplierRule });
+    const suppBody = req.body;
+    const createSupplierRule = await SupplierModel.create(suppBody);
+    res.status(201).json({ success: true, data: createSupplierRule });
   } catch (error) {
     console.log(error);
     res
