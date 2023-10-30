@@ -3,8 +3,9 @@ const SupplierModel = require("../models/supplierRulsModel");
 const createSupplierRules = async (req, res) => {
   try {
     const suppBody = req.body
-    console.log("suppBody", req.body)
-    const createSupplierRule = await SupplierModel.create(suppBody);
+      const uploadimage =req.file?.filename
+      console.log("testing",uploadimage)
+    const createSupplierRule = await SupplierModel.create({...suppBody,image:uploadimage});
     res.status(201).json({ success: true, data: createSupplierRule });
   } catch (error) {
     console.log(error);

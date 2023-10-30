@@ -9,6 +9,7 @@ app.use(cors());
 // app.use(express.json())
 // app.use(express.urlencoded({extended:true}))
 // supplier routes
+app.use('',express.static("uploads"))
 app.use(mainRoutes);
 
 http.listen(5000, () => {
