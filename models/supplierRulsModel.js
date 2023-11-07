@@ -28,7 +28,7 @@ const SupplierModel = sequelize.define(
     },
     status: {
       type: DataTypes.BOOLEAN,
-      allowNull: true,
+      allowNull: false,
     },
   },
   {

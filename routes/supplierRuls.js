@@ -11,4 +11,19 @@ router.post("/suplierpost", upload.single("image"), async (req, res) => {
   return suppRuls.createSupplierRules(req, res);
 });
 
+router.get("/suplierget/:id", async (req, res) => {
+  return suppRuls.getSingleSupplierRule(req, res);
+});
+router.patch(
+  "/updatesupplier/:id",
+  upload.single("image"),
+  async (req, res) => {
+    return suppRuls.updateSingleSupplierRule(req, res);
+  }
+);
+
+router.delete("/delete/:id", async (req, res) => {
+  return suppRuls.deleteSupplierRule(req, res);
+});
+
 module.exports = router;
