@@ -23,12 +23,10 @@ const createSupplierRules = async (req, res) => {
         if (allowedExtention.includes(fileExtenion)) {
           return next();
         } else {
-          return res
-            .status(400)
-            .json({
-              success: false,
-              message: "Only PNG and JPG images are allowed.",
-            });
+          return res.status(400).json({
+            success: false,
+            message: "Only PNG and JPG images are allowed.",
+          });
         }
       }
       return next();
@@ -48,13 +46,11 @@ const createSupplierRules = async (req, res) => {
         image: uploadimage,
       });
 
-      res
-        .status(201)
-        .json({
-          success: true,
-          message: "Supplier rule created successfully",
-          data: createSupplierRule,
-        });
+      res.status(201).json({
+        success: true,
+        message: "Supplier rule created successfully",
+        data: createSupplierRule,
+      });
     });
   } catch (error) {
     console.log(error);
