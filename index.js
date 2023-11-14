@@ -9,10 +9,10 @@ app.use(cors());
 // app.use(express.json())
 // app.use(express.urlencoded({extended:true}))
 // supplier routes
-app.use('',express.static("uploads"))
+app.use("", express.static("uploads"));
 app.use("/supplierRuls/suplierget", express.static("uploads"));
 app.use(mainRoutes);
-const port = 5000||process.env.port;
+const port = 5000 || process.env.port;
 http.listen(port, () => {
   console.log("server runing on 5000 port");
 });
