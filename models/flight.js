@@ -9,15 +9,19 @@ const flight = sequelize.define("flight", {
   },
   flt_number: {
     type: DataTypes.STRING,
+    allowNull: false,
   },
   origin: {
     type: DataTypes.STRING,
+    allowNull: false,
   },
   destination: {
     type: DataTypes.STRING,
+    allowNull: false,
   },
   bag_info: {
     type: DataTypes.STRING,
+    allowNull: false,
   },
 });
 
