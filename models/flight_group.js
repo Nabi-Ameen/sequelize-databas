@@ -24,10 +24,10 @@ const flightGroup = sequelize.define("flightGroup", {
 });
 
 // Associations
-flightGroup.hasMany(passanger);
-flightGroup.hasMany(flight);
+flightGroup.hasMany(passanger, { foreignKey: "id" });
+flightGroup.hasMany(flight, { foreignKey: "id" });
 
-passanger.belongsTo(flightGroup);
-flight.belongsTo(flightGroup);
+passanger.belongsTo(flightGroup, { foreignKey: "id" });
+flight.belongsTo(flightGroup, { foreignKey: "id" });
 
 module.exports = flightGroup;

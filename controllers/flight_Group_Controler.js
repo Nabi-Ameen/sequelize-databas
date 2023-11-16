@@ -6,11 +6,15 @@ const flight = require("../models/flight");
 const getALLFlightGroup = async (req, res) => {
   try {
     const forms = await flightGroup.findAll({
-      include: [{ model: passanger }, { model: flight }],
+      include: [
+        { model: passanger, as: "passangers" },
+        { model: flight, as: "flights" },
+      ],
     });
 
     res.status(200).json({ data: forms });
   } catch (error) {
+    console.log(error);
     res
       .status(500)
       .json({ message: "Error fetching data", error: error.message });
