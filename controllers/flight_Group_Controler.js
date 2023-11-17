@@ -1,14 +1,14 @@
 // const { flightGroup, Passanger, Flight } = require("../models");
 const flightGroup = require("../models/flight_group");
-const passanger = require("../models/passanger");
-const flight = require("../models/flight");
+const Passanger = require("../models/passanger");
+const Flight = require("../models/flight");
 
 const getALLFlightGroup = async (req, res) => {
   try {
     const forms = await flightGroup.findAll({
       include: [
-        { model: passanger, as: "passangers" },
-        { model: flight, as: "flights" },
+        { model: Passanger, as: "passangers" },
+        { model: Flight, as: "flights" },
       ],
     });
 
@@ -39,7 +39,7 @@ const createFlightGroup = async (req, res) => {
         passangerType: pass.passangerType,
         price_passanger: pass.price_passanger,
         supp_pay_bill: pass.supp_pay_bill,
-        OneToManyFormId: createdForm.id, // Associate passanger with the form
+        flight_id:createdForm.id, // Associate passanger with the form
       });
     });
 
@@ -50,7 +50,7 @@ const createFlightGroup = async (req, res) => {
         origin: flt.origin,
         destination: flt.destination,
         bag_info: flt.bag_info,
-        OneToManyFormId: createdForm.id, // Associate flight with the form
+        flight_id: createdForm.id, // Associate flight with the form
       });
     });
     res.status(201).json({
