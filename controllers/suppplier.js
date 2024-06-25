@@ -1,5 +1,4 @@
 const Supplier = require("../models/supplier");
-
 const createSupplier = async (req, res) => {
   try {
     const supplierData = req.body;

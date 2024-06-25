@@ -4,6 +4,11 @@ const { DataTypes } = Sequelize;
 const Supplier = sequelize.define(
   "supplier",
   {
+    id:{
+      type: DataTypes.INTEGER,
+      autoIncrement: true,
+      primaryKey: true
+    },
     supplier_Category: {
       type: DataTypes.STRING,
     },
@@ -11,16 +16,16 @@ const Supplier = sequelize.define(
       type: DataTypes.STRING,
     },
     contact_Number: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING,
     },
     currency: {
       type: DataTypes.STRING,
     },
     roe: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING,
     },
     commision: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING,
     },
     email: {
       type: DataTypes.STRING,

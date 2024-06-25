@@ -12,7 +12,7 @@ app.use(cors());
 app.use("", express.static("uploads"));
 app.use("/supplierRuls/suplierget", express.static("uploads"));
 app.use(mainRoutes);
-const port = 5000 || process.env.port;
+const port =  process.env.port || 5000;
 http.listen(port, () => {
   console.log("server runing on 5000 port");
 });

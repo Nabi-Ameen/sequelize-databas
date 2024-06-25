@@ -3,6 +3,11 @@ const Sequelize = require("sequelize");
 const { DataTypes } = Sequelize;
 const flightGroup = require("./flight_group")
 const Flight = sequelize.define("flight", {
+  id:{
+    type:DataTypes.INTEGER,
+    autoIncrement: true,
+    primaryKey: true
+  },
   flight: {
     type: DataTypes.STRING,
     allowNull: false,
