@@ -5,7 +5,7 @@ var app = express();
 var http = require("http").Server(app);
 app.use(express.json());
 app.use(cors());
-// app.options("*",cors())
+app.options("*",cors())
 // app.use(express.json())
 // app.use(express.urlencoded({extended:true}))
 // supplier routes
